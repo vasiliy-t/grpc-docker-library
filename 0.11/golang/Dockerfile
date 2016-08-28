@@ -49,6 +49,8 @@ RUN git clone https://github.com/google/protobuf.git && \
 # build a specific version.
 
 # Get the source from GitHub
-RUN go get google.golang.org/grpc
-# Install protoc-gen-go
-RUN go get github.com/golang/protobuf/protoc-gen-go
+RUN go get google.golang.org/grpc && \
+    go get github.com/golang/protobuf/protoc-gen-go && \
+    go get -u github.com/gengo/grpc-gateway/protoc-gen-grpc-gateway && \
+    go get -u github.com/gengo/grpc-gateway/protoc-gen-swagger && \
+    go get -u github.com/golang/protobuf/protoc-gen-go
